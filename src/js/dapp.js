@@ -10,8 +10,8 @@ DApp = {
     // set to true to use with local blockchain
     development: true,
     //Rinkeby:
-    factoryAddress: "0xe47684d658872fbde11c82036099a12c066c4fa3",
-    tokenAddress: "0x86b32525e687500ed4a665d1b16fef526cdd6f10",
+    factoryAddress: "0x5c921E38a20acBfA86B64e573318392669627fc2",
+    tokenAddress: "0x9E552C0C97F4037d97B130d9BE3E62A4d0284a5c",
 
     init: function() {
         console.log("[x] Initializing DApp.");
@@ -29,7 +29,8 @@ DApp = {
           DApp.web3Provider = web3.currentProvider;
         } else {
           // If no injected web3 instance is detected, fallback to the TestRPC
-          DApp.web3Provider = new Web3.providers.HttpProvider('http://localhost:9545');
+        //   DApp.web3Provider = new Web3.providers.HttpProvider('https://localhost:3000/');
+          DApp.web3Provider = new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/');
         }
         web3 = new Web3(DApp.web3Provider);
         console.log("[x] web3 object initialized.");
@@ -48,6 +49,8 @@ DApp = {
         else
             return DApp.toptalTokenContract.at(DApp.tokenAddress);
     },
+
+
 
     /**
      *  TODO: Rewrite to use promises.
