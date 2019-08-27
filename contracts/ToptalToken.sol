@@ -13,12 +13,12 @@ contract ToptalToken is ERC20 {
   mapping(address => uint256) balances;
   mapping (address => mapping (address => uint256)) internal allowed;
 
-  string public name = "Toptal Token";
-  string public symbol = "TTT";
-  uint256 public decimals = 6;
+  string public name = "sun Token";
+  string public symbol = "sun";
+  uint256 public decimals = 18;
 
   function ToptalToken() public {
-    totalSupply = 1000000 * (10 ** decimals);
+    totalSupply = 1000000000000000000000 * (10 ** decimals);
     balances[msg.sender] = totalSupply;
   }
 
